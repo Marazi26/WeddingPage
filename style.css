@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.sideMenu{
+    display: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #0a0908;
+    box-shadow: 5px 7px 20px #a9927d;
+    align-items: center;
+}
+.homePageLogo{
+    width: 50%;
+    padding-left: 30px;
+}
+.leftMenu{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+}
+.rightMenu{
+    width: 85%;
+}
+.rightMenu > ul{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.rightMenu > ul > li {
+    cursor: pointer;
+    font-size: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #f2f4f3;
+    font-style: oblique;
+}
+.basket{
+    position: relative;
+    color: #bcab9b;
+}
+.favorites{
+    position: relative;
+}
+.favoritesNumber,
+.basketNumber{
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    text-align: center;
+    /* font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: monospace;
+    color:#3b2511;
+    background-color: #bcab9b;
+    box-shadow: 0px 2px 2px #ffffff;
+    border-radius: 50px;
+    position: absolute;
+    top: -10px;
+    right: -15px;
+}
+.basketNumber{
+    top: 18px;
+    right: 468px;
+}
+/* .search{
+    padding-right: 170px;
+} */
+.searchIcon{
+    display: none;
+}
+.searchInput{
+    width: 200px;
+    border-radius: 20px;
+    padding: 3px 0;
+    background-color: #bcab9b;
+}
+.searchInput::placeholder{
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color:#0a0908;
+}
+.menuList{
+    display: none;
+}
+/****************************NAV MEDIA***************************/
+@media screen and (min-width: 527px) and (max-width: 784px) {
+    .sideMenu{
+        display: none;
+    }
+    nav{
+        background-color: #0a0908;
+        box-shadow: 5px 7px 20px #a9927d;
+        padding-bottom: 20px;
+        align-items: center;
+    }
+    .homePageLogo{
+        width: 90px;
+    }
+    .leftMenu{
+        width: 0;
+        padding-top: 5px;
+        padding-left: 60px;
+    }
+    .rightMenu{
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .rightMenu > ul > li{
+        font-size: 16px;
+    }
+    .rightMenu ul{
+        padding-top: 0;
+    }
+    .favoritesNumber,
+    .basketNumber{
+        width: 12px;
+        height: 12px;
+        font-size: 10px;
+    }
+    .search{
+        display: none;
+    }
+    .searchIcon{
+        right: 10px;
+        display:none;
+        position: static;
+    }
+  }
+@media screen and (min-width: 320px) and (max-width: 528px) {
+    nav{
+        display: none;
+    }
+    .topMenu{
+        display: flex;
+        height: 50px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        background-color: #0a0908;
+        padding: 0 15px;
+        z-index: 9999999999999999;
+    }
+    .topMenu > ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    .topMenu > ul > li {
+        color: #f2f4f3;
+    }
+    .topMenuLogo{
+        padding-top: 3px;
+        width: 70%;
+    }
+    .basketNumber{
+        width: 12px;
+        height: 12px;
+        left: 215px;
+        top: 5.5px;
+    }
+    .favoritesNumber{
+        width: 12px;
+        height: 12px;
+    }
+    .bottomMenu{
+        position: absolute;
+        left: 0;
+        top: 50px;
+        background-color: #bcab9b;
+        transform: translate(-150px);
+        transition: 0.5s;
+        width: 30%;
+        box-shadow: -2px 2px 2px #3b2511;
+        border-radius: 2px;
+        z-index: 888888888888;
+    }
+    .bottomMenu > ul > li {
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-style:18px;
+        font-weight: 400;
+        padding: 5px;
+        border-bottom: 0.002px solid #989592;
+    }
+    .bottomMenu > ul > li:hover{
+        background-color: #0a0908;
+        color: #f2f4f3;
+        border-radius: 2px;
+    }
+    [id=open]:checked + .bottomMenu{
+        transform: translate(0);
+    }
+}
